@@ -12,6 +12,7 @@ import org.apache.http.HttpHeaders;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
@@ -37,12 +38,7 @@ public class Philps {
         answer.put("8", "A");
         answer.put("9", "C");
         httpclient = new DefaultHttpClient();
-        httpclient.getParams().setParameter(
-                HttpHeaders.USER_AGENT,
-                "Mozilla/5.0 (Windows NT 5.1; rv:7.0.1) Gecko/20100101 Firefox/7.0.1"
-            );
 
-        httpclient.getParams().setParameter(HttpHeaders.REFERER, "http://119.161.148.59:2000/Front.aspx/kaochang");
         for (int j = 0; j< 100; j++) {
             getNumber();
             Thread.sleep(20);
@@ -70,6 +66,7 @@ public class Philps {
     private static void getNumber() throws Exception {
         int time = getTime();
         HttpGet httpget = new HttpGet(getNumberUrl + time);
+        filterHttpMethod(httpget);
         HttpResponse response = httpclient.execute(httpget);
         HttpEntity entity = response.getEntity();
         String content = EntityUtils.toString(entity);
@@ -85,6 +82,7 @@ public class Philps {
         int time = getTime();
         System.out.println("begin=" + time);
         HttpGet httpget = new HttpGet(getBeginUrl + time);
+        filterHttpMethod(httpget);
         HttpResponse response = httpclient.execute(httpget);
         HttpEntity entity = response.getEntity();
         String content = EntityUtils.toString(entity);
@@ -95,6 +93,7 @@ public class Philps {
         int time = getTime();
         System.out.println("submit=" + time);
         HttpGet httpget = new HttpGet(String.format(submitUrl, key, value, URLEncoder.encode(name, "UTF-8"), phone, time));
+        filterHttpMethod(httpget);
         HttpResponse response = httpclient.execute(httpget);
         HttpEntity entity = response.getEntity();
         String content = EntityUtils.toString(entity);
@@ -107,6 +106,14 @@ public class Philps {
         Calendar cal = Calendar.getInstance();
         Date v = new Date();
         return cal.get(Calendar.DATE) + cal.get(Calendar.HOUR_OF_DAY) + cal.get(Calendar.MINUTE) + cal.get(Calendar.SECOND) + cal.get(Calendar.MILLISECOND);
+    }
+    
+    private static void filterHttpMethod(HttpUriRequest method) {
+        method.setHeader(
+                HttpHeaders.USER_AGENT,
+                "Mozilla/5.0 (Windows NT 5.1; rv:7.0.1) Gecko/20100101 Firefox/7.0.1"
+            );
+        method.setHeader(HttpHeaders.REFERER, "http://119.161.148.59:2000/Front.aspx/kaochang");
     }
     
 }

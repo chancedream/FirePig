@@ -18,6 +18,7 @@ import org.apache.http.util.EntityUtils;
 
 public class OCJ {
     public static void main(String[] args) throws Exception {
+        run("sophie_6", "wang6ming3");
         
     }
     

@@ -1,17 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
@@ -24,6 +20,11 @@ public class HaoQi extends Thread {
     private int count;
 
     public static void main(String[] args) throws Exception {
+        new HaoQi("YMH不要脸", "831202", "M22", 1).start();
+        new HaoQi("YMH不要脸_2", "831202", "L20", 2).start();
+        new HaoQi("YMN不要脸_3", "831202", "M22", 1).start();
+        new HaoQi("YMH不要脸_4", "831202", "L20", 0).start();
+        new HaoQi("YMH不要脸_5", "831202", "M22", 1).start();
 
     }
 
