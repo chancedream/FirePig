@@ -11,7 +11,7 @@ public class Netease {
     
     public static void main(String[] args) {
         Netease netease = new Netease();
-        netease.login("love4ever45", "passw0rd");
+        netease.login("", "");
     }
 
     public Netease() {

@@ -17,7 +17,7 @@ public class Etao {
     
     public static void main(String args[]) throws Exception {
         Etao etao = new Etao();
-        etao.login("love4ever44", "passw0rd");
+        etao.login("", "");
         etao.lotteryPage();
         for (int i = 0; i < 10000; i++) {
             Thread.sleep(1000);

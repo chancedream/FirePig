@@ -21,7 +21,7 @@ public class D2 {
     
     public static void main(String[] args) throws Exception {
         D2 d2 = new D2();
-        d2.login("love4ever", "passw0rd");
+        d2.login("", "");
         Thread.sleep(2000);
         HttpResponse lastResponse = d2.get("http://bbs.91d2.cn/read-htm-tid-1090820.html");
         Thread.sleep(2000);

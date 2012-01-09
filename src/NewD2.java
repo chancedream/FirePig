@@ -31,8 +31,8 @@ public class NewD2 {
     public static void run() throws Exception{
         NewD2 d2 = new NewD2();
         Random random = new Random();
-        //d2.login("love4ever", "passw0rd");
-        d2.login("chancedream", "sssv13vt");
+        //d2.login("", "");
+        d2.login("", "");
         Thread.sleep(2000);
         d2.get("http://bbs.91d2.cn/read-htm-tid-1089855.html");
         Thread.sleep(2000);

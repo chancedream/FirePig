@@ -20,11 +20,7 @@ public class HaoQi extends Thread {
     private int count;
 
     public static void main(String[] args) throws Exception {
-        new HaoQi("YMH不要脸", "831202", "M22", 1).start();
-        new HaoQi("YMH不要脸_2", "831202", "L20", 2).start();
-        new HaoQi("YMN不要脸_3", "831202", "M22", 1).start();
-        new HaoQi("YMH不要脸_4", "831202", "L20", 0).start();
-        new HaoQi("YMH不要脸_5", "831202", "M22", 1).start();
+        new HaoQi("", "", "M22", 1).start();
 
     }
 
